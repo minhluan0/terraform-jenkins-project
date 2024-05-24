@@ -11,6 +11,10 @@ terraform {
 
 provider "aws" {
   region = "ap-southeast-1"
+  assume_role {
+    role_arn = "arn:aws:iam::130506138320:role/Milu-TerraformS3BackendRole"
+    session_name = "terraform"
+  }
 }
 
 data "aws_ami" "ami" {
